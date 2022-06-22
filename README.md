@@ -5,7 +5,7 @@ PDF 内の text や image へのアクセスをコンテキストマネージャ
 
 # install
 
-`pip install pakkan-pdf`
+`pip install pakkanpdf`
 
 # 使い方
 
