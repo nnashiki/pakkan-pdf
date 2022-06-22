@@ -3,6 +3,9 @@ name = "pakkanpdf"
 version = "0.1.0"
 description = "pdf 内の text や image へのアクセスをコンテキストマネージャーを使ってシンプルに行える"
 authors = ["Niten Nashiki <n.nashiki.work@gmail.com>"]
+readme = "README.md"
+homepage = "https://github.com/nnashiki/pakkan-pdf"
+repository = "https://github.com/nnashiki/pakkan-pdf"
 
 [tool.poetry.dependencies]
 python = "^3.9"

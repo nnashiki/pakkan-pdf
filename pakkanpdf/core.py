@@ -1,7 +1,7 @@
 import mimetypes
 import os
 import pathlib
-import tempfile
+import shutil
 from io import StringIO
 
 from pdfminer.high_level import extract_text, extract_text_to_fp
@@ -9,7 +9,6 @@ from pdfminer.high_level import extract_text, extract_text_to_fp
 from pakkanpdf import exceptions
 
 output_string = StringIO()
-import shutil
 
 ALLOW_IMAGE_FILE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".gif"]
 
@@ -32,7 +31,7 @@ class PdfExtractor:
         # check work_img_dir
         self.work_img_dir = os.path.join(work_dir, work_img_dir)
         if os.path.exists(self.work_img_dir):
-            raise exceptions.DepilicatedWorkingImageDirectoryError("work_img_dir は最終的に削除されるため、存在するディレクトリを指定することができません")
+            raise exceptions.DuplicatedWorkingImageDirectoryError("work_img_dir は最終的に削除されるため、存在するディレクトリを指定することができません")
         os.makedirs(self.work_img_dir, exist_ok=False)
 
     def __enter__(self):

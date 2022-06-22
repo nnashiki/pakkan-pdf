@@ -6,5 +6,5 @@ class NotFoundWorkingDirectoryError(Exception):
     pass
 
 
-class DepilicatedWorkingImageDirectoryError(Exception):
+class DuplicatedWorkingImageDirectoryError(Exception):
     pass
