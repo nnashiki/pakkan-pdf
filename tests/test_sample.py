@@ -6,6 +6,6 @@ def test_version():
 
 
 def test_sample():
-    with PdfExtractor("data/example.pdf", "demo_work_dir") as extractor:
+    with PdfExtractor(pdf_path="data/example.pdf", work_dir="demo_work_dir") as extractor:
         assert "これはサンプルのPDFです" in extractor.text
         assert extractor.image_file_paths == ["demo_work_dir/work_images/X8.jpg"]
