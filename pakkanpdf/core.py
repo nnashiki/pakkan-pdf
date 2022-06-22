@@ -10,7 +10,7 @@ from pakkanpdf import exceptions
 
 output_string = StringIO()
 
-ALLOW_IMAGE_FILE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".gif"]
+ALLOW_IMAGE_FILE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".gif", ".tif", ".tiff", ".bmp"]
 
 
 class PdfExtractor:
