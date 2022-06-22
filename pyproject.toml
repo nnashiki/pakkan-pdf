@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "pakkanpdf"
+version = "0.1.0"
+description = "pdf 内の text や image へのアクセスをコンテキストマネージャーを使ってシンプルに行える"
+authors = ["Niten Nashiki <n.nashiki.work@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+"pdfminer.six" = {extras = ["image"], version = "^20220524"}
+
+[tool.poetry.dev-dependencies]
+black = "^22.3.0"
+isort = "^5.10.1"
+pytest = "^7.1.2"
+taskipy = "^1.10.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 119
+target-version = ['py39']
+include = '\.pyi?$'
+exclude = '''
+(
+  /(
+      \.eggs
+    | \.git
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+)
+'''
+
+[tool.isort]
+profile = "black"
+
+[tool.taskipy.tasks]
+black = "black pakkanpdf &&  black tests"
+isort = "isort pakkanpdf &&  isort tests"
+# poetry run task test
+test = "pytest . -s"
+# poetry run task fmt
+fmt = { cmd = "task black && task isort", help = "format code" }
