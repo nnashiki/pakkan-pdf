@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pakkanpdf"
-version = "0.1.2"
+version = "0.1.3"
 description = "pdf 内の text や image へのアクセスをコンテキストマネージャーを使ってシンプルに行える"
 authors = ["Niten Nashiki <n.nashiki.work@gmail.com>"]
 readme = "README.md"
